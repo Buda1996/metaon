@@ -1,0 +1,1 @@
+If this file is present first runtime is not succesfull

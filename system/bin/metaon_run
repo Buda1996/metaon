@@ -1,0 +1,19 @@
+#!/system/bin/sh
+
+echo " Metaon Shield and Repair are online "
+sleep 4
+while true;
+do 
+chmod 755 /system/Intel/Logs/rep.log
+trap "echo manual abort; exit 1"  1 2 3 15
+RUNS=0;
+
+if sh /system/etc/backup/metaon_repair.sh
+
+then 
+       RUNS=$((RUNS+1));
+       echo $RUNS > /system/Intel/Logs/rep.log
+sleep 15
+fi
+done
+exit 0

@@ -1,0 +1,16 @@
+#!/system/xbin/sh
+### Metaon Engine v18 | By Buda1996. 2015 ###
+
+for i in \
+`find /data -iname "*.db"`; 
+do \
+	sqlite3 $i 'VACUUM;'; 
+done;
+
+for i in \
+`find /data -iname "*.db"`; 
+do \
+	sqlite3 $i 'REINDEX;'; 
+done;
+
+sync;

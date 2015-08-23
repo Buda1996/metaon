@@ -1,0 +1,11 @@
+#!/system/xbin/sh
+### Metaon Engine v18 | By Buda1996. 2015 ###
+
+READ_AHEAD_KB="4096"
+MAX="97"
+
+echo $READ_AHEAD_KB > /sys/devices/virtual/bdi/179:0/read_ahead_kb
+echo $MAX > /sys/devices/virtual/bdi/179:0/max_ratio
+echo $READ_AHEAD_KB > /sys/devices/virtual/bdi/default/read_ahead_kb
+echo $MAX > /sys/devices/virtual/bdi/default/max_ratio
+

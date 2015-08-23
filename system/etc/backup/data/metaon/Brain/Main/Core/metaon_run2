@@ -1,0 +1,17 @@
+#!/system/bin/sh
+
+RUN_EVERY=172800
+while true;
+do
+trap "echo manual abort; exit 1"  1 2 3 15
+RUNS=sh /system/metaon/Brain/Neuron/Prefs/ram.killer/MramLag.sh;
+chmod 755 /system/Intel/Logs/metaon_boost
+if  sh /system/metaon/Brain/Neuron/Prefs/ram.killer/MramLag.sh 
+
+then 
+       RUNS=$((RUNS+1));
+       echo $RUNS > /system/Intel/Logs/metaon_boost
+sleep 10
+fi
+done
+exit 0

@@ -1,0 +1,26 @@
+#!/system/bin/sh
+
+PATH=$PATH:/system/xbin:/sbin:/vendor/bin:/system/sbin:/system/bin
+if [ -d "/data/local/busybox*/xbin" ]; then PATH=$PATH:`ls -d /data/local/busybox*/xbin 2>/dev/null`; fi
+
+LOG=/system/spl/Intel/Logs/truster.log;
+
+if [ -e $LOG ]; then
+	rm $LOG;
+fi;
+
+touch $LOG;
+echo "*** SPL ENTROPY ***" > $LOG;
+echo "" >> $LOG;
+echo "$( date +"%m-%d-%Y %H:%M:%S" ) Executing Truster..." >> $LOG;
+echo "" >> $LOG;
+
+rngd -t 2 -T 1 -s 256 --fill-watermark=80%
+sleep 2
+echo -8 > /proc/$(pgrep rngd)/oom_adj
+renice 5 `pidof rngd`
+
+echo "...Launching and Renice Rngd , set on 4096 = OK..." >> $LOG;
+
+echo "" >> $LOG;
+echo "$( date +"%m-%d-%Y %H:%M:%S" ) Truster is Successfully Executed..." >> $LOG;

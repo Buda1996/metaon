@@ -1,0 +1,17 @@
+#!/system/bin/sh
+
+clear
+
+sleep 2
+    echo ""
+    echo "SPL ENGINE CORE is properity of Spike Lab "
+    echo "It belongs to the maker buda1996 or Rados Budisa"
+    echo "You can NOT mod this script becouse it belong's  "
+	echo "to Rados Budisa and his Company which is real"
+	echo "It is protected by German Law and is under autorship law"
+	echo "If you want to have this code contact the developer kindly"
+	echo "He will answere in short time ,if not contact him again"
+	echo "Best Regards"
+	echo "Rados Budisa @buda1996"
+sleep 5
+exit 0

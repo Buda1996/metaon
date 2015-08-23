@@ -1,0 +1,116 @@
+#!/system/bin/sh
+if  [ -d /system/metaon ]
+then
+sh  system/metaon/Brain/Main/Core/ignite.sh
+sh  system/bin/firstboot.sh
+sh 
+fi;
+clear;
+sleep 2
+echo -e "\e[00;41m=========================================================\e[00;37;40m"
+echo -e "\e[00;41m===================Metaon© ENGINE CORE====================\e[00;37;40m" 
+echo -e "\e[00;41m================ CORE IS NOW OPERATIONAL=================\e[00;37;40m"
+echo -e "\e[00;41m=========================================================\e[00;37;40m"
+sleep 2
+echo "         .........---METAON MAIN MENU ---.........."
+sleep 2
+echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+echo "     Preparing options to take control of the software:"
+echo ""
+echo "    1. METAON self-repair "
+echo ""
+echo "    2. METAON ram infuser "
+echo ""
+echo "    3. Install METAON Sqlite "
+echo ""
+echo "    4. Licence "
+echo ""
+echo "    5. Uninstall METAON ENGINE "
+echo ""
+echo "    6. Exit "
+sleep 1
+echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+echo "    The above tasks are automated but if you want,"
+echo "    you can take direct controll over these tasks."
+echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+echo " "
+sleep 1
+echo -n "Chose desired option: "                
+read character
+case $character in 
+
+
+
+1) clear;
+sh system/bin/metaon_run
+echo "";
+sleep 3
+clear ;;
+
+2) clear;
+sh system/metaon/Brain/Main/Core/metaon_run2
+echo "";
+sleep 3
+clear ;;
+
+3) clear;
+sh system/metaon/Brain/Main/Core/isqlite 
+echo "";
+sleep 5
+echo ""
+echo -n "Do you want to go to base menu?
+[ Yes = 1 | No = 2 ]: "
+read option
+if [ $option -ne 1 ]; then
+   echo ""
+   echo "No,exiting out now..."
+sleep 1
+exit
+else
+   echo ""
+   echo " "
+   sh system/bin/Metaon
+sleep 1
+fi
+clear ;;
+
+
+4) clear;
+sh system/metaon/Logo_Trademark/licence
+echo "";
+sleep 3
+clear ;;
+
+
+5) clear;
+sh system/metaon/Brain/Main/Core/metaon_uninstall
+echo "";
+sleep 3
+clear ;;
+
+6) clear;
+echo "Exiting script";
+echo ""
+sleep 3
+exit ;;
+
+*) clear;
+echo "Exiting script ,Invalid Option";
+sleep 2
+
+esac
+echo ""
+echo -n "Do you want to go to base menu?
+[ Yes = 1 | No = 2 ]: "
+read option
+if [ $option -ne 1 ]; then
+   echo ""
+   echo "No,exiting out now..."
+sleep 1
+exit
+else
+   echo ""
+   echo ""
+   sleep 3
+   sh system/bin/Metaon
+fi

@@ -1,0 +1,11 @@
+#!/system/bin/sh
+
+#Permission giving script
+
+chmod 777 /system/metaon/Brain/Main/Core/metaon_boost.sh
+chmod 777 /system/metaon/Brain/Main/Core/metaon_run2
+chmod 777 /system/metaon/Brain/Main/Core/metaon_uninstall
+chmod 777 /system/metaon/Brain/Main/Core/metaon_run
+
+
+

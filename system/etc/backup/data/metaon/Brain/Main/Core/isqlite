@@ -1,0 +1,12 @@
+#!/system/bin/sh
+
+
+mount -o rw,remount /system
+
+sh /system/metaon/Brain/Neuron/Encachment/SqLite/install.sh
+
+echo
+echo "SQLite3 binary and libncurses.so installed!"
+echo
+
+exit 0
